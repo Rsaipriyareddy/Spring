@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.lti.training</groupId>
+  <artifactId>Spring-MVC</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+  
+  <!-- Custom Names For the Versions by using the Properties Tag.
+  		To use these we have to use this ${"variable"}.This is Called as EL(Expression Language) -->
+  <properties>
+  	<spring.version>5.1.8.RELEASE</spring.version>
+  	<oracle.version>12.2.0.1</oracle.version>
+  	<hibernate.version>5.4.3.Final</hibernate.version>
+  	<dbcp2.version>2.6.0</dbcp2.version>
+  	<jackson.version>2.9.9</jackson.version>
+  </properties>
+  
+  <dependencies>
+  
+  <!-- Below 2 Dependencies are common for the Spring Framework to work -->
+  	<dependency>
+      	<groupId>org.springframework</groupId>
+      	<artifactId>spring-core</artifactId>
+      	<version>${spring.version}</version>
+ 	 </dependency>
+ 	 
+ 	 <dependency>
+ 	 	<groupId>org.springframework</groupId>
+ 		<artifactId>spring-context</artifactId>
+    	<version>${spring.version}</version>
+ 	 </dependency>
+ 	 
+ 	 <!-- This Dependency is for the JDBC Template -->
+ 	  <dependency>
+ 	 	<groupId>org.springframework</groupId>
+ 		<artifactId>spring-jdbc</artifactId>
+    	<version>${spring.version}</version> 
+ 	 </dependency>
+ 	 
+ 	 <!-- When we are Using Hibernate ORM or other ORMs -->
+ 	 <dependency>	
+ 	 	<groupId>org.springframework</groupId>
+ 		<artifactId>spring-orm</artifactId>
+    	<version>${spring.version}</version>
+ 	 </dependency>
+ 	 
+ 	 <!-- When we are Using Spring Web -->
+ 	 <dependency>	
+ 	 	<groupId>org.springframework</groupId>
+ 		<artifactId>spring-web</artifactId>
+    	<version>${spring.version}</version>
+ 	 </dependency>
+ 	 
+ 	 <!-- When we are Using Spring MVC-->
+ 	 <dependency>	
+ 	 	<groupId>org.springframework</groupId>
+ 		<artifactId>spring-webmvc</artifactId>
+    	<version>${spring.version}</version>
+ 	 </dependency>
+ 	 
+ 	 <!-- Thud Dependency is for Oracle -->
+ 	 <dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc8</artifactId>
+		<version>${oracle.version}</version>
+	</dependency>
+	
+	
+	<!-- Adding the DBCP2 dependency for the Spring Application -->
+	<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+	<dependency>
+  		<groupId>org.apache.commons</groupId>
+  		<artifactId>commons-dbcp2</artifactId>
+  		<version>${dbcp2.version}</version>
+	</dependency>
+	
+	<!-- This Dependency is for the Hibernate to be included in the Spring Application -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	
+	<!-- For Parsing the JSON(Javascript Object Notation) -->
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+	<dependency>
+    	<groupId>com.fasterxml.jackson.core</groupId>
+    	<artifactId>jackson-core</artifactId>
+    	<version>${jackson.version}</version>
+	</dependency>
+	
+	
+</dependencies>
+  
+</project>

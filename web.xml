@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>Spring-MVC</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- This Servlet will plays the role of Front Controller
+  	in Spring MVC.In other words, this Servlet will be the 
+  	entry point in our application.Any Incoming Request 
+  	will be handled by this Servlet and Proceed Further.
+  	Also this Servlet will Automatically create an 
+  	ApplicationContext object for us..so that we don't
+  	have to write this code any more.
+  			Application-context context = new ClassPathXmlApplicationContext("spring-config.xml")-->
+   <servlet>
+      <servlet-name>SpringMvc</servlet-name>
+      <servlet-class>
+         org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+      
+      <init-param>
+      	<param-name>contextConfigLocation</param-name>
+      	<param-value>/WEB-INF/spring-config.xml</param-value>
+      </init-param>
+      
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>SpringMvc</servlet-name>
+      <url-pattern>*.lti</url-pattern>
+   </servlet-mapping>
+</web-app>
